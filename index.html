@@ -358,6 +358,104 @@ section{
 }
 
 /* ======================= */
+/* PRICING */
+/* ======================= */
+
+.pricing-section{
+    background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(245,249,255,0));
+}
+
+.pricing-card{
+    background:white;
+    border-radius:30px;
+    padding:36px;
+    height:100%;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(0,87,216,.08);
+    transition:.4s;
+}
+
+.pricing-card:hover{
+    transform:translateY(-10px);
+}
+
+.pricing-card.featured{
+    border:2px solid rgba(0,166,81,.22);
+}
+
+.pricing-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:linear-gradient(135deg,rgba(0,166,81,.12),rgba(0,87,216,.12));
+    color:#111827;
+    border-radius:999px;
+    padding:9px 15px;
+    font-size:.88rem;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.pricing-card h3{
+    font-size:1.8rem;
+    font-weight:900;
+    margin-bottom:12px;
+}
+
+.pricing-card p{
+    color:var(--gray);
+    line-height:1.8;
+}
+
+.price{
+    display:flex;
+    align-items:flex-end;
+    gap:8px;
+    margin:24px 0;
+}
+
+.price strong{
+    font-size:3rem;
+    line-height:1;
+    font-weight:900;
+    color:#111827;
+}
+
+.price span{
+    color:var(--gray);
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.pricing-list{
+    list-style:none;
+    padding:0;
+    margin:0 0 28px;
+}
+
+.pricing-list li{
+    display:flex;
+    gap:12px;
+    color:#374151;
+    font-weight:600;
+    margin-bottom:14px;
+    line-height:1.5;
+}
+
+.pricing-list i{
+    color:var(--green);
+    font-size:20px;
+}
+
+.pricing-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+/* ======================= */
 /* SCREENSHOT CARD */
 /* ======================= */
 
@@ -557,6 +655,23 @@ section{
     font-size:2.2rem;
 }
 
+.pricing-card{
+    padding:26px;
+}
+
+.price{
+    flex-wrap:wrap;
+}
+
+.price strong{
+    font-size:2.35rem;
+}
+
+.pricing-actions .btn-main{
+    width:100%;
+    justify-content:center;
+}
+
 }
 
 </style>
@@ -592,6 +707,10 @@ SatpudaCore
 </li>
 
 <li class="nav-item">
+<a class="nav-link" href="#pricing">Pricing</a>
+</li>
+
+<li class="nav-item">
 <a class="nav-link" href="#screenshots">Screenshots</a>
 </li>
 
@@ -601,7 +720,7 @@ SatpudaCore
 
 <li class="nav-item ms-lg-3">
 
-<a href="#" class="btn-main">
+<a href="https://github.com/narendra2074/Satpudacore.exe/raw/main/SatpudaCore.rar?utm_source=chatgpt.com" class="btn-main" target="_blank" rel="noopener noreferrer">
 
 <i class="bi bi-download"></i>
 
@@ -661,7 +780,7 @@ and medicine databases through a premium modern software experience.
 
 <div class="hero-buttons">
 
-<a href="#" class="btn-main">
+<a href="https://github.com/narendra2074/Satpudacore.exe/raw/main/SatpudaCore.rar?utm_source=chatgpt.com" class="btn-main" target="_blank" rel="noopener noreferrer">
 
 <i class="bi bi-download"></i>
 
@@ -915,6 +1034,116 @@ directly from Android application.
 
 </section>
 
+<!-- PRICING -->
+
+<section id="pricing" class="pricing-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Simple Pricing</h2>
+
+<p>
+
+Choose the version that fits your medical store workflow.
+Offline is ready to download with lifetime backup, while the
+online version connects PC and Android with lifetime online data storage.
+
+</p>
+
+</div>
+
+<div class="row g-4 justify-content-center">
+
+<div class="col-lg-6">
+
+<div class="pricing-card">
+
+<div class="pricing-badge">
+<i class="bi bi-pc-display"></i>
+Offline Package
+</div>
+
+<h3>Offline PC Version</h3>
+
+<p>
+Best for stores that want full desktop billing and management
+with lifetime backup support.
+</p>
+
+<div class="price">
+<strong>Rs. 8,000</strong>
+<span>one time</span>
+</div>
+
+<ul class="pricing-list">
+<li><i class="bi bi-check-circle-fill"></i><span>PC software for billing, inventory, reports, and customers</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Lifetime backup included for your store data</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Download and install on your offline system</span></li>
+</ul>
+
+<div class="pricing-actions">
+
+<a href="https://github.com/narendra2074/Satpudacore.exe/raw/main/SatpudaCore.rar?utm_source=chatgpt.com" class="btn-main" target="_blank" rel="noopener noreferrer">
+<i class="bi bi-download"></i>
+Download Offline Version
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="pricing-card featured">
+
+<div class="pricing-badge">
+<i class="bi bi-cloud-check"></i>
+Connected Package
+</div>
+
+<h3>Online PC + Android Application</h3>
+
+<p>
+Designed for connected access from both PC and Android, with
+every PC feature available in the Android application and
+lifetime online data storage.
+</p>
+
+<div class="price">
+<strong>Rs. 12,000</strong>
+<span>one time</span>
+</div>
+
+<ul class="pricing-list">
+<li><i class="bi bi-check-circle-fill"></i><span>PC software and Android application stay connected</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Each PC feature is available from the Android application</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Lifetime online data storage included</span></li>
+<li><i class="bi bi-check-circle-fill"></i><span>Best choice for multi-device daily store management</span></li>
+</ul>
+
+<div class="pricing-actions">
+
+<a href="#contact" class="btn-main">
+<i class="bi bi-chat-dots"></i>
+Contact Us
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- SCREENSHOTS -->
 
 <section id="screenshots">
@@ -1048,7 +1277,7 @@ and lifetime secure backup systems.
 
 </p>
 
-<a href="#" class="btn-light-custom">
+<a href="https://github.com/narendra2074/Satpudacore.exe/raw/main/SatpudaCore.rar?utm_source=chatgpt.com" class="btn-light-custom" target="_blank" rel="noopener noreferrer">
 
 <i class="bi bi-download"></i>
 
@@ -1188,6 +1417,7 @@ and backup systems.
 
 <a href="#">Home</a>
 <a href="#features">Features</a>
+<a href="#pricing">Pricing</a>
 <a href="#screenshots">Screenshots</a>
 <a href="#contact">Contact</a>
 

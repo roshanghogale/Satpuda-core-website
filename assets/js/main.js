@@ -6,9 +6,9 @@
         });
     }
 
-    var RELEASE_API = 'https://api.github.com/repos/roshanghogale/satpuda-core-pc-offline-medical-management/releases/latest';
-    var RELEASE_BASE = 'https://github.com/roshanghogale/satpuda-core-pc-offline-medical-management/releases/download/';
-    var FALLBACK_VERSION = 'v1.0.1';
+    var RELEASE_API = 'https://api.github.com/repos/roshanghogale/exes-for-satpuda-core/releases/latest';
+    var RELEASE_BASE = 'https://github.com/roshanghogale/exes-for-satpuda-core/releases/download/';
+    var FALLBACK_VERSION = 'v1.0.0';
 
     function formatSize(bytes) {
         if (!bytes) return '~127 MB';

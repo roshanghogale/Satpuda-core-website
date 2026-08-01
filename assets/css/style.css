@@ -83,11 +83,9 @@ a {
 }
 
 .logo {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-    object-fit: cover;
-    background: #000;
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
 }
 
 .logo-for-dark { display: block; }
@@ -99,11 +97,19 @@ a {
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.15rem;
+    gap: 12px;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--text) !important;
     letter-spacing: -0.02em;
+}
+
+.navbar-toggler {
+    border-color: var(--border);
+}
+
+[data-theme="light"] .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%);
 }
 
 .navbar-brand small {
@@ -276,18 +282,14 @@ a {
 }
 
 .hero-logo-tile {
-    background: #000;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 30px;
+    padding: 36px;
     box-shadow: var(--shadow);
-    max-width: 420px;
+    max-width: 440px;
     margin: 0 auto;
     position: relative;
-}
-
-[data-theme="light"] .hero-logo-tile {
-    background: #0a0f24;
 }
 
 .hero-logo-tile::before {
@@ -522,6 +524,12 @@ section {
     margin-bottom: 18px;
 }
 
+[data-theme="light"] .product-tag {
+    color: #15803d;
+    background: rgba(22, 163, 74, 0.08);
+    border-color: rgba(22, 163, 74, 0.3);
+}
+
 .product-spotlight h3 {
     font-size: 1.7rem;
     font-weight: 800;
@@ -654,6 +662,12 @@ section {
     padding: 6px 16px;
     border-radius: 999px;
     margin-bottom: 16px;
+}
+
+[data-theme="light"] .download-version {
+    color: #15803d;
+    background: rgba(22, 163, 74, 0.08);
+    border-color: rgba(22, 163, 74, 0.3);
 }
 
 .download-wrap h1 {
@@ -908,7 +922,7 @@ section {
 }
 
 .footer .border-secondary {
-    border-color: var(--border) !important;
+    border-color: rgba(148, 163, 184, 0.25) !important;
 }
 
 .socials {
@@ -920,11 +934,11 @@ section {
     width: 40px;
     height: 40px;
     border-radius: 9px;
-    background: rgba(148, 163, 184, 0.08);
+    background: rgba(148, 163, 184, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text);
+    color: #edf2f7;
     transition: 0.2s;
 }
 

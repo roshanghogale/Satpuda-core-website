@@ -39,6 +39,11 @@
             localStorage.setItem(THEME_KEY, theme);
         } catch (e) {}
 
+        var favicon = document.getElementById('favicon');
+        if (favicon) {
+            favicon.href = theme === 'light' ? 'assets/logo_icon.png' : 'assets/logo_icon_dark.png';
+        }
+
         var toggles = document.querySelectorAll('[data-theme-toggle]');
         toggles.forEach(function (btn) {
             btn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');

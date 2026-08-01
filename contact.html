@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('satpuda-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 <title>Contact | Satpuda Core Private Limited</title>
 <meta name="description" content="Contact Satpuda Core Private Limited for websites, Android apps, custom software, and SaaS solutions.">
 <link rel="icon" type="image/png" href="assets/logo_icon.png">
@@ -34,6 +35,12 @@
 <li class="nav-item"><a class="nav-link" href="products.html" data-page="products">Products</a></li>
 <li class="nav-item"><a class="nav-link" href="download.html" data-page="download">Downloads</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html" data-page="contact">Contact</a></li>
+<li class="nav-item ms-lg-2">
+<button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+<i class="bi bi-moon-stars-fill icon-moon"></i>
+<i class="bi bi-sun-fill icon-sun"></i>
+</button>
+</li>
 <li class="nav-item ms-lg-2"><a href="contact.html" class="btn-main"><i class="bi bi-chat-dots"></i> Get a Quote</a></li>
 </ul>
 </div>
@@ -144,7 +151,7 @@
 </div>
 </div>
 <hr class="my-4 border-secondary">
-<div class="text-center" style="color:var(--muted)">© 2026 Satpuda Core Private Limited. All Rights Reserved.</div>
+<div class="text-center text-muted-footer">© 2026 Satpuda Core Private Limited. All Rights Reserved.</div>
 </div>
 </footer>
 

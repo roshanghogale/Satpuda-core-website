@@ -1,6 +1,7 @@
 (function () {
     var page = document.body.dataset.page;
     var prefetchedPages = {};
+    var THEME_KEY = 'satpuda-theme';
 
     if (page) {
         document.querySelectorAll('[data-page="' + page + '"]').forEach(function (el) {
@@ -13,13 +14,47 @@
     var FALLBACK_VERSION = 'v1.0.0';
 
     function formatSize(bytes) {
-        if (!bytes) return '~127 MB';
+        if (!bytes) return '~90 MB';
         return '~' + Math.round(bytes / (1024 * 1024)) + ' MB';
     }
 
     function setText(id, text) {
         var el = document.getElementById(id);
         if (el) el.textContent = text;
+    }
+
+    function getPreferredTheme() {
+        try {
+            var saved = localStorage.getItem(THEME_KEY);
+            if (saved === 'light' || saved === 'dark') return saved;
+        } catch (e) {}
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+            ? 'light'
+            : 'dark';
+    }
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+            localStorage.setItem(THEME_KEY, theme);
+        } catch (e) {}
+
+        var toggles = document.querySelectorAll('[data-theme-toggle]');
+        toggles.forEach(function (btn) {
+            btn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+            btn.setAttribute('title', theme === 'light' ? 'Dark theme' : 'Light theme');
+        });
+    }
+
+    function initThemeToggle() {
+        applyTheme(getPreferredTheme());
+
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var current = document.documentElement.getAttribute('data-theme') || 'dark';
+                applyTheme(current === 'light' ? 'dark' : 'light');
+            });
+        });
     }
 
     function isPrefetchableLink(link) {
@@ -116,6 +151,7 @@
             });
     }
 
+    initThemeToggle();
     initPagePrefetch();
     initDownloads();
 })();

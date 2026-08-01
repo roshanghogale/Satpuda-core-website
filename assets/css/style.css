@@ -279,7 +279,7 @@ a {
 }
 
 .hero-logo-tile {
-    background: #0a0f24;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 36px;

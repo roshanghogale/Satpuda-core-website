@@ -33,6 +33,20 @@ WEBSITE_REF = {
     "url": SITE,
 }
 
+COMPANY_DESCRIPTION = (
+    "Satpuda Core Private Limited develops and sells SatpudaCore Medical Management "
+    "software for medical stores and pharmacies (offline PC and PC+Android), "
+    "SatpudaCore Hospital Management SaaS for small hospitals, billing and business "
+    "management software, custom websites, Android, desktop, iOS and Mac applications, "
+    "and SaaS products for businesses across India."
+)
+
+WEBSITE_DESCRIPTION = (
+    "Official website of Satpuda Core Private Limited — SatpudaCore Medical Management, "
+    "SatpudaCore Hospital Management SaaS, billing software, and custom software development. "
+    "Billing | Management | Simplified."
+)
+
 ORGANIZATION = {
     "@type": "Organization",
     "@id": ORG_ID,
@@ -42,7 +56,8 @@ ORGANIZATION = {
     "url": SITE,
     "logo": f"{SITE}/assets/logo_icon.png",
     "image": f"{SITE}/assets/logo_icon.png",
-    "description": "Satpuda Core Private Limited is a software development company providing billing and management software, medical and hospital solutions, websites, and custom applications.",
+    "description": COMPANY_DESCRIPTION,
+    "slogan": "Billing | Management | Simplified",
     "foundingDate": "2026-07-28",
     "telephone": "+91-93254-85954",
     "email": "satpudacoreprivatelimited@gmail.com",
@@ -78,6 +93,18 @@ ORGANIZATION = {
             "availableLanguage": ["English", "Hindi", "Marathi"],
         },
     ],
+    "knowsAbout": [
+        "SatpudaCore Medical Management",
+        "Medical store management software",
+        "Pharmacy billing software",
+        "SatpudaCore Hospital Management",
+        "Hospital management SaaS",
+        "Medical billing software",
+        "Business management SaaS",
+        "Website development",
+        "Android application development",
+        "Desktop software development",
+    ],
 }
 
 WEBSITE = {
@@ -86,7 +113,7 @@ WEBSITE = {
     "url": SITE,
     "name": "Satpuda Core Private Limited",
     "alternateName": "Satpuda Core",
-    "description": "Billing | Management | Simplified - Official website of Satpuda Core Private Limited.",
+    "description": WEBSITE_DESCRIPTION,
     "inLanguage": ["en-IN", "hi-IN", "mr-IN"],
     "publisher": dict(ORG_REF),
     "copyrightHolder": dict(ORG_REF),
@@ -98,11 +125,12 @@ APPS = [
         "@id": f"{SITE}/products.html#medical-pc",
         "name": "SatpudaCore Medical Management - Offline PC",
         "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Medical Management Software",
         "operatingSystem": "Windows",
         "url": f"{SITE}/products.html",
         "publisher": dict(ORG_REF),
         "author": dict(ORG_REF),
-        "description": "Offline medical store billing and management software from Satpuda Core Private Limited. First-time licence Rs 8000. AMC Rs 1000 per year.",
+        "description": "SatpudaCore Medical Management is offline medical store and pharmacy billing and management SaaS for Windows from Satpuda Core Private Limited. First-time licence Rs 8000. AMC Rs 1000 per year.",
         "offers": [
             {
                 "@type": "Offer",
@@ -129,11 +157,12 @@ APPS = [
         "@id": f"{SITE}/products.html#medical-pc-android",
         "name": "SatpudaCore Medical Management - PC + Android",
         "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Medical Management Software",
         "operatingSystem": "Windows, Android",
         "url": f"{SITE}/products.html",
         "publisher": dict(ORG_REF),
         "author": dict(ORG_REF),
-        "description": "Medical management software with PC and Android from Satpuda Core Private Limited. First-time payment Rs 10000. AMC Rs 1000 per year.",
+        "description": "SatpudaCore Medical Management with PC and Android is medical store and pharmacy management SaaS from Satpuda Core Private Limited. First-time payment Rs 10000. AMC Rs 1000 per year.",
         "offers": [
             {
                 "@type": "Offer",
@@ -160,11 +189,12 @@ APPS = [
         "@id": f"{SITE}/products.html#hospital",
         "name": "SatpudaCore Hospital Management for Small Hospitals",
         "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Hospital Management SaaS",
         "operatingSystem": "Windows",
         "url": f"{SITE}/products.html",
         "publisher": dict(ORG_REF),
         "author": dict(ORG_REF),
-        "description": "Hospital management software for small hospitals from Satpuda Core Private Limited. First-time payment Rs 15000.",
+        "description": "SatpudaCore Hospital Management is hospital management SaaS for small hospitals from Satpuda Core Private Limited. First-time payment Rs 15000.",
         "offers": {
             "@type": "Offer",
             "price": "15000",
@@ -177,6 +207,26 @@ APPS = [
 ]
 
 SERVICES = [
+    {
+        "@type": "Service",
+        "@id": f"{SITE}/products.html#medical-management",
+        "name": "SatpudaCore Medical Management Software",
+        "serviceType": "Medical Store Management Software",
+        "provider": dict(ORG_REF),
+        "areaServed": "IN",
+        "url": f"{SITE}/products.html",
+        "description": "Medical store and pharmacy billing and management software SaaS from Satpuda Core Private Limited.",
+    },
+    {
+        "@type": "Service",
+        "@id": f"{SITE}/products.html#hospital-management",
+        "name": "SatpudaCore Hospital Management SaaS",
+        "serviceType": "Hospital Management SaaS",
+        "provider": dict(ORG_REF),
+        "areaServed": "IN",
+        "url": f"{SITE}/products.html",
+        "description": "Hospital management SaaS for small hospitals from Satpuda Core Private Limited.",
+    },
     {
         "@type": "Service",
         "@id": f"{SITE}/services.html#websites",
@@ -283,7 +333,23 @@ FAQ = {
             "name": "What does Satpuda Core Private Limited do?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Satpuda Core Private Limited is a software company offering billing and management solutions, medical and hospital software, websites, Android apps, desktop software, and iOS and Mac applications.",
+                "text": "Satpuda Core Private Limited develops and sells SatpudaCore Medical Management software for medical stores and pharmacies (offline PC and PC+Android), SatpudaCore Hospital Management SaaS for small hospitals, billing and business management software, custom websites, Android apps, desktop software, iOS and Mac applications, and SaaS products for businesses in India.",
+            },
+        },
+        {
+            "@type": "Question",
+            "name": "What is SatpudaCore Medical Management?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SatpudaCore Medical Management is medical store and pharmacy billing and management software from Satpuda Core Private Limited. It is available as offline PC software (Rs 8000 first-time) or PC + Android (Rs 10000 first-time) with AMC Rs 1000 per year.",
+            },
+        },
+        {
+            "@type": "Question",
+            "name": "What is SatpudaCore Hospital Management?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SatpudaCore Hospital Management is hospital management SaaS for small hospitals from Satpuda Core Private Limited. First-time payment is Rs 15000.",
             },
         },
         {
@@ -327,8 +393,8 @@ PAGES = {
             "@type": "WebPage",
             "@id": f"{SITE}/#webpage",
             "url": f"{SITE}/",
-            "name": "Satpuda Core Private Limited | Software Development Company",
-            "description": "Satpuda Core Private Limited provides billing and management software, websites, Android apps, and custom software solutions.",
+            "name": "Satpuda Core Private Limited | Medical & Hospital Management SaaS",
+            "description": COMPANY_DESCRIPTION,
             "isPartOf": dict(WEBSITE_REF),
             "about": dict(ORG_REF),
             "publisher": dict(ORG_REF),
@@ -473,7 +539,7 @@ def write_asset_files() -> None:
 def main() -> None:
     for filename, cfg in PAGES.items():
         rebuild_page(filename, cfg)
-        print(f"Updated {filename} with 13 standalone Schema.org scripts")
+        print(f"Updated {filename} with 15 standalone Schema.org scripts")
     write_asset_files()
     print("Updated assets/schema-primary.jsonld.html and schema-catalog.jsonld.html")
 

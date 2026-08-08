@@ -22,4 +22,4 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-Sitemap: https://www.satpudacore.in/sitemap.xml
+Sitemap: https://satpudacore.in/sitemap.xml

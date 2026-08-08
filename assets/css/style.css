@@ -305,8 +305,9 @@ a {
 
 .hero-logo-tile img {
     width: 100%;
-    border-radius: var(--radius);
+    border-radius: 0;
     display: block;
+    background: transparent;
 }
 
 /* PAGE HEADER (inner pages) */
@@ -827,6 +828,80 @@ section {
     color: var(--muted);
     max-width: 520px;
     margin: 0 auto 30px;
+}
+
+/* ABOUT */
+.about-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+}
+
+.about-panel h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.about-panel h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+}
+
+.about-panel > p {
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+.company-facts {
+    margin: 20px 0 0;
+    display: grid;
+    gap: 14px;
+}
+
+.company-facts > div {
+    display: grid;
+    grid-template-columns: minmax(140px, 220px) 1fr;
+    gap: 8px 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.company-facts dt {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.company-facts dd {
+    margin: 0;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.company-facts a {
+    color: var(--cyan);
+}
+
+.about-services {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--muted);
+}
+
+.about-services li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .about-panel { padding: 28px 20px; }
+    .company-facts > div {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* CONTACT */

@@ -30,80 +30,361 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Satpuda Core",
-  "legalName": "Satpuda Core Private Limited",
-  "alternateName": ["SatpudaCore", "Satpuda Core Pvt Ltd"],
-  "url": "https://www.satpudacore.in",
-  "logo": "https://www.satpudacore.in/assets/logo_icon.png?v=10",
-  "image": "https://www.satpudacore.in/assets/logo_dark.png?v=10",
-  "description": "Satpuda Core Private Limited builds websites, Android applications, custom software, and SaaS billing and management solutions for medical stores, doctors, hotels, and growing businesses. Billing | Management | Simplified.",
-  "slogan": "Billing | Management | Simplified",
-  "foundingDate": "2026-07-28",
-  "email": "satpudacoreprivatelimited@gmail.com",
-  "telephone": ["+91-93254-85954", "+91-70588-74807"],
-  "identifier": {
-    "@type": "PropertyValue",
-    "propertyID": "CIN",
-    "value": "U62013ME2026PTC475941",
-    "name": "Corporate Identity Number"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "783 Jalgaon Jamod, Wadshingi, Jalgaon",
-    "addressLocality": "Buldhana",
-    "addressRegion": "Maharashtra",
-    "postalCode": "443402",
-    "addressCountry": "IN"
-  },
-  "contactPoint": [
+  "@graph": [
     {
-      "@type": "ContactPoint",
-      "telephone": "+91-93254-85954",
+      "@type": ["Organization", "Corporation"],
+      "@id": "https://www.satpudacore.in/#organization",
+      "name": "Satpuda Core",
+      "legalName": "Satpuda Core Private Limited",
+      "alternateName": ["SatpudaCore", "Satpuda Core Pvt Ltd"],
+      "url": "https://www.satpudacore.in",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.satpudacore.in/assets/logo_icon.png"
+      },
+      "image": "https://www.satpudacore.in/assets/logo_dark.png",
+      "description": "Satpuda Core Private Limited is an Indian software development company that builds websites, Android apps, desktop software, iOS and Mac applications, SaaS, and billing/management solutions for medical stores, doctors, hospitals, hotels, and businesses.",
+      "slogan": "Billing | Management | Simplified",
+      "foundingDate": "2026-07-28",
       "email": "satpudacoreprivatelimited@gmail.com",
-      "contactType": "customer service",
-      "areaServed": "IN",
-      "availableLanguage": ["English", "Hindi", "Marathi"]
+      "telephone": ["+91-93254-85954", "+91-70588-74807"],
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "CIN",
+        "value": "U62013ME2026PTC475941",
+        "name": "Corporate Identity Number"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "783 Jalgaon Jamod, Wadshingi, Jalgaon",
+        "addressLocality": "Buldhana",
+        "addressRegion": "Maharashtra",
+        "postalCode": "443402",
+        "addressCountry": "IN"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-93254-85954",
+          "email": "satpudacoreprivatelimited@gmail.com",
+          "contactType": "sales",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi", "Marathi"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-70588-74807",
+          "email": "satpudacoreprivatelimited@gmail.com",
+          "contactType": "customer support",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi", "Marathi"]
+        }
+      ],
+      "knowsAbout": [
+        "Software Development",
+        "Website Development",
+        "Android Application Development",
+        "iOS Application Development",
+        "Mac Software Development",
+        "Desktop Software Development",
+        "Medical Store Billing Software",
+        "Hospital Management Software",
+        "SaaS",
+        "Custom Software Development"
+      ],
+      "makesOffer": [
+        { "@id": "https://www.satpudacore.in/products.html#medical-pc" },
+        { "@id": "https://www.satpudacore.in/products.html#medical-pc-android" },
+        { "@id": "https://www.satpudacore.in/products.html#hospital" },
+        { "@id": "https://www.satpudacore.in/services.html#websites" },
+        { "@id": "https://www.satpudacore.in/services.html#android" },
+        { "@id": "https://www.satpudacore.in/services.html#desktop" },
+        { "@id": "https://www.satpudacore.in/services.html#ios-mac" }
+      ],
+      "hasOfferCatalog": {
+        "@id": "https://www.satpudacore.in/#offer-catalog"
+      }
     },
     {
-      "@type": "ContactPoint",
-      "telephone": "+91-70588-74807",
+      "@type": "ProfessionalService",
+      "@id": "https://www.satpudacore.in/#software-company",
+      "name": "Satpuda Core Private Limited",
+      "legalName": "Satpuda Core Private Limited",
+      "url": "https://www.satpudacore.in",
+      "image": "https://www.satpudacore.in/assets/logo_dark.png",
+      "description": "Software development company offering medical management software, hospital management software, website development, Android apps, desktop software, and iOS/Mac applications.",
+      "priceRange": "?6000-?500000",
+      "telephone": "+91-93254-85954",
       "email": "satpudacoreprivatelimited@gmail.com",
-      "contactType": "customer service",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "783 Jalgaon Jamod, Wadshingi, Jalgaon",
+        "addressLocality": "Buldhana",
+        "addressRegion": "Maharashtra",
+        "postalCode": "443402",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "addressCountry": "IN"
+      },
       "areaServed": "IN",
-      "availableLanguage": ["English", "Hindi", "Marathi"]
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, UPI, Bank Transfer",
+      "parentOrganization": {
+        "@id": "https://www.satpudacore.in/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.satpudacore.in/#website",
+      "name": "Satpuda Core Private Limited",
+      "alternateName": "Satpuda Core",
+      "url": "https://www.satpudacore.in",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://www.satpudacore.in/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.satpudacore.in/#webpage",
+      "url": "https://www.satpudacore.in/",
+      "name": "Satpuda Core Private Limited | Software Development Company",
+      "isPartOf": { "@id": "https://www.satpudacore.in/#website" },
+      "about": { "@id": "https://www.satpudacore.in/#organization" },
+      "description": "Official website of Satpuda Core Private Limited ? software development, medical billing software, hospital software, websites, Android, desktop, iOS and Mac apps."
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://www.satpudacore.in/#offer-catalog",
+      "name": "Satpuda Core products and development services",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Ready-made software products",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@id": "https://www.satpudacore.in/products.html#medical-pc" } },
+            { "@type": "Offer", "itemOffered": { "@id": "https://www.satpudacore.in/products.html#medical-pc-android" } },
+            { "@type": "Offer", "itemOffered": { "@id": "https://www.satpudacore.in/products.html#hospital" } }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Custom software development services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@id": "https://www.satpudacore.in/services.html#websites" } },
+            { "@type": "Offer", "itemOffered": { "@id": "https://www.satpudacore.in/services.html#android" } },
+            { "@type": "Offer", "itemOffered": { "@id": "https://www.satpudacore.in/services.html#desktop" } },
+            { "@type": "Offer", "itemOffered": { "@id": "https://www.satpudacore.in/services.html#ios-mac" } }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.satpudacore.in/products.html#medical-pc",
+      "name": "SatpudaCore Medical Management ? Offline PC",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Medical Store Billing Software",
+      "operatingSystem": "Windows",
+      "description": "Offline medical store and pharmacy billing, inventory, and reporting software. First-time licence Rs 8,000. AMC Rs 1,000 per year.",
+      "url": "https://www.satpudacore.in/products.html",
+      "image": "https://www.satpudacore.in/assets/logo_dark.png",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "First-time PC licence",
+          "price": "8000",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Maintenance Contract (AMC)",
+          "price": "1000",
+          "priceCurrency": "INR",
+          "description": "AMC Rs 1,000 per year",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "provider": { "@id": "https://www.satpudacore.in/#organization" },
+      "brand": {
+        "@type": "Brand",
+        "name": "SatpudaCore"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.satpudacore.in/products.html#medical-pc-android",
+      "name": "SatpudaCore Medical Management ? PC + Android",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Windows, Android",
+      "description": "Medical management with PC and Android. First-time payment Rs 10,000. AMC Rs 1,000 per year.",
+      "url": "https://www.satpudacore.in/products.html",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "First-time PC + Android licence",
+          "price": "10000",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Maintenance Contract (AMC)",
+          "price": "1000",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "provider": { "@id": "https://www.satpudacore.in/#organization" },
+      "brand": { "@type": "Brand", "name": "SatpudaCore" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.satpudacore.in/products.html#hospital",
+      "name": "SatpudaCore Hospital Management for Small Hospitals",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Windows",
+      "description": "Hospital management software for small hospitals. First-time payment Rs 15,000.",
+      "url": "https://www.satpudacore.in/products.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "15000",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock"
+      },
+      "provider": { "@id": "https://www.satpudacore.in/#organization" },
+      "brand": { "@type": "Brand", "name": "SatpudaCore" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.satpudacore.in/services.html#websites",
+      "name": "Website Development",
+      "serviceType": "Website Development",
+      "category": "Software Development",
+      "description": "Custom business websites, landing pages, and e-commerce sites from Rs 6,000 to Rs 1,00,000.",
+      "provider": { "@id": "https://www.satpudacore.in/#organization" },
+      "areaServed": "IN",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "6000",
+        "highPrice": "100000",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.satpudacore.in/services.html"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.satpudacore.in/services.html#android",
+      "name": "Android Application Development",
+      "serviceType": "Mobile App Development",
+      "category": "Software Development",
+      "description": "Custom Android applications from Rs 40,000 to Rs 5,00,000.",
+      "provider": { "@id": "https://www.satpudacore.in/#organization" },
+      "areaServed": "IN",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "40000",
+        "highPrice": "500000",
+        "priceCurrency": "INR",
+        "url": "https://www.satpudacore.in/services.html"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.satpudacore.in/services.html#desktop",
+      "name": "Desktop Application Development",
+      "serviceType": "Desktop Software Development",
+      "category": "Software Development",
+      "description": "Custom Windows desktop applications typically from Rs 40,000 to Rs 5,00,000.",
+      "provider": { "@id": "https://www.satpudacore.in/#organization" },
+      "areaServed": "IN",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "40000",
+        "highPrice": "500000",
+        "priceCurrency": "INR",
+        "url": "https://www.satpudacore.in/services.html"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.satpudacore.in/services.html#ios-mac",
+      "name": "iOS and Mac Application Development",
+      "serviceType": "Apple Software Development",
+      "category": "Software Development",
+      "description": "Custom iOS apps and Mac software typically from Rs 40,000 to Rs 5,00,000.",
+      "provider": { "@id": "https://www.satpudacore.in/#organization" },
+      "areaServed": "IN",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "40000",
+        "highPrice": "500000",
+        "priceCurrency": "INR",
+        "url": "https://www.satpudacore.in/services.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.satpudacore.in/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Satpuda Core a legal Private Limited company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Satpuda Core Private Limited is an Indian company incorporated on 28 July 2026 under the Companies Act, 2013. CIN: U62013ME2026PTC475941. Registered office: 783 Jalgaon Jamod, Wadshingi, Jalgaon, Buldhana - 443402, Maharashtra, India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Satpuda Core Private Limited do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Satpuda Core Private Limited is a software development company. It builds medical management software, hospital management software, websites, Android applications, desktop software, iOS and Mac applications, and custom SaaS solutions. Tagline: Billing | Management | Simplified."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the price of SatpudaCore Medical Management software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PC version first-time payment is Rs 8,000. PC + Android first-time payment is Rs 10,000. Annual maintenance (AMC) is Rs 1,000 per year."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does hospital management software cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hospital management software for small hospitals from Satpuda Core Private Limited is Rs 15,000 first-time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Satpuda Core website and app development prices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Website development ranges from Rs 6,000 to Rs 1,00,000. Android, desktop, iOS and Mac application development typically ranges from Rs 40,000 to Rs 5,00,000 depending on scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact Satpuda Core Private Limited?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Email satpudacoreprivatelimited@gmail.com or call +91-93254 85954 / +91-70588 74807. Website: https://www.satpudacore.in"
+          }
+        }
+      ]
     }
-  ],
-  "knowsAbout": ["Software Development", "Billing Software", "Medical Store Management", "Hospital Management Software", "Website Development", "Android Applications", "Desktop Software", "iOS Apps", "Mac Software", "SaaS"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Satpuda Core Private Limited",
-  "alternateName": "Satpuda Core",
-  "url": "https://www.satpudacore.in",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Satpuda Core Private Limited",
-    "legalName": "Satpuda Core Private Limited",
-    "url": "https://www.satpudacore.in"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Satpuda Core Private Limited products and services",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Medical Management PC","url":"https://www.satpudacore.in/products.html","description":"Rs 8000 first-time, AMC Rs 1000/year"},
-    {"@type":"ListItem","position":2,"name":"Medical Management PC + Android","url":"https://www.satpudacore.in/products.html","description":"Rs 10000 first-time, AMC Rs 1000/year"},
-    {"@type":"ListItem","position":3,"name":"Hospital Management for Small Hospitals","url":"https://www.satpudacore.in/products.html","description":"Rs 15000 first-time"},
-    {"@type":"ListItem","position":4,"name":"Website Development","url":"https://www.satpudacore.in/services.html","description":"Rs 6000 to Rs 100000"},
-    {"@type":"ListItem","position":5,"name":"Android Application Development","url":"https://www.satpudacore.in/services.html","description":"Rs 40000 to Rs 500000"},
-    {"@type":"ListItem","position":6,"name":"Desktop, iOS and Mac Software","url":"https://www.satpudacore.in/services.html","description":"Typically Rs 40000 to Rs 500000"}
   ]
 }
 </script>
@@ -180,14 +461,14 @@
 <div class="section-title">
 <span class="eyebrow">What we do</span>
 <h2>Our Services</h2>
-<p>Ready-made medical software and custom development — websites, Android, desktop, iOS, Mac, and more.</p>
+<p>Ready-made medical software and custom development ? websites, Android, desktop, iOS, Mac, and more.</p>
 </div>
 <div class="row g-4">
 <div class="col-md-6 col-lg-4">
 <div class="feature-card">
 <div class="feature-icon"><i class="bi bi-capsule-pill"></i></div>
 <h4>Medical Management Software</h4>
-<p>PC first-time <strong>Rs 8,000</strong> · PC + Android <strong>Rs 10,000</strong> · AMC <strong>Rs 1,000/year</strong>.</p>
+<p>PC first-time <strong>Rs 8,000</strong> ? PC + Android <strong>Rs 10,000</strong> ? AMC <strong>Rs 1,000/year</strong>.</p>
 </div>
 </div>
 <div class="col-md-6 col-lg-4">
@@ -274,7 +555,7 @@
 <div class="row align-items-center g-4">
 <div class="col-lg-8">
 <div class="product-tag"><i class="bi bi-box-seam"></i> Flagship Product</div>
-<h3>SatpudaCore — Medical Management Software</h3>
+<h3>SatpudaCore ? Medical Management Software</h3>
 <p>Offline billing, inventory, and reporting for medical stores. PC Rs 8,000 or PC + Android Rs 10,000 first-time, with AMC Rs 1,000/year. Hospital management for small hospitals from Rs 15,000.</p>
 </div>
 <div class="col-lg-4 text-lg-end">
@@ -288,11 +569,59 @@
 </div>
 </section>
 
+<section class="pt-0" id="faq">
+<div class="container">
+<div class="section-title">
+<span class="eyebrow">FAQ</span>
+<h2>Common questions about Satpuda Core</h2>
+<p>Clear answers for customers, search engines, and AI assistants.</p>
+</div>
+<div class="row g-4">
+<div class="col-lg-6">
+<article class="feature-card">
+<h4>Is Satpuda Core a legal Private Limited company?</h4>
+<p>Yes. Satpuda Core Private Limited is incorporated on 28 July 2026 under the Companies Act, 2013. CIN: U62013ME2026PTC475941. Registered office: 783 Jalgaon Jamod, Wadshingi, Jalgaon, Buldhana - 443402, Maharashtra, India.</p>
+</article>
+</div>
+<div class="col-lg-6">
+<article class="feature-card">
+<h4>What does Satpuda Core Private Limited do?</h4>
+<p>We are a software development company. We build medical management software, hospital management software, websites, Android apps, desktop software, iOS and Mac applications, and custom SaaS. Billing | Management | Simplified.</p>
+</article>
+</div>
+<div class="col-lg-6">
+<article class="feature-card">
+<h4>What is the price of SatpudaCore Medical Management?</h4>
+<p>PC first-time: Rs 8,000. PC + Android first-time: Rs 10,000. AMC: Rs 1,000 per year.</p>
+</article>
+</div>
+<div class="col-lg-6">
+<article class="feature-card">
+<h4>How much is hospital management software?</h4>
+<p>Hospital management for small hospitals is Rs 15,000 first-time.</p>
+</article>
+</div>
+<div class="col-lg-6">
+<article class="feature-card">
+<h4>What are website and app development prices?</h4>
+<p>Websites: Rs 6,000 to Rs 1,00,000. Android, desktop, iOS and Mac apps: typically Rs 40,000 to Rs 5,00,000 depending on scope.</p>
+</article>
+</div>
+<div class="col-lg-6">
+<article class="feature-card">
+<h4>How can I contact Satpuda Core?</h4>
+<p>Email <a href="mailto:satpudacoreprivatelimited@gmail.com">satpudacoreprivatelimited@gmail.com</a> or call <a href="tel:+919325485954">+91-93254 85954</a> / <a href="tel:+917058874807">+91-70588 74807</a>.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+
 <section class="pt-0">
 <div class="container">
 <div class="cta">
 <h2>Have a project in mind?</h2>
-<p>Tell us what you need — a website, an Android app, custom software, or a ready-made solution. We'll get back to you quickly.</p>
+<p>Tell us what you need ? a website, an Android app, custom software, or a ready-made solution. We'll get back to you quickly.</p>
 <a href="mailto:satpudacoreprivatelimited@gmail.com" class="btn-main"><i class="bi bi-envelope"></i> satpudacoreprivatelimited@gmail.com</a>
 </div>
 </div>
@@ -341,7 +670,7 @@
 </div>
 </div>
 <hr class="my-4 border-secondary">
-<div class="text-center text-muted-footer">© 2026 Satpuda Core Private Limited. All Rights Reserved. CIN: U62013ME2026PTC475941</div>
+<div class="text-center text-muted-footer">? 2026 Satpuda Core Private Limited. All Rights Reserved. CIN: U62013ME2026PTC475941</div>
 </div>
 </footer>
 

@@ -34,17 +34,18 @@ WEBSITE_REF = {
 }
 
 COMPANY_DESCRIPTION = (
-    "Satpuda Core Private Limited develops and sells SatpudaCore Medical Management "
-    "software for medical stores and pharmacies (offline PC and PC+Android), "
-    "SatpudaCore Hospital Management SaaS for small hospitals, billing and business "
-    "management software, custom websites, Android, desktop, iOS and Mac applications, "
-    "and SaaS products for businesses across India."
+    "Satpuda Core Private Limited builds custom websites, Android applications, iOS and Mac "
+    "applications, Windows desktop software, and other technology products for businesses. "
+    "We also provide SaaS products: SatpudaCore Medical Management for medical stores and "
+    "pharmacies, SatpudaCore Hospital Management SaaS for small hospitals with Android apps "
+    "for receptionists and doctors on tablets and phones, and more SaaS including hotel "
+    "management coming soon."
 )
 
 WEBSITE_DESCRIPTION = (
-    "Official website of Satpuda Core Private Limited — SatpudaCore Medical Management, "
-    "SatpudaCore Hospital Management SaaS, billing software, and custom software development. "
-    "Billing | Management | Simplified."
+    "Official website of Satpuda Core Private Limited — custom websites, Android, iOS, Mac "
+    "and desktop software development, SatpudaCore Medical Management, SatpudaCore Hospital "
+    "Management SaaS, and upcoming SaaS products. Billing | Management | Simplified."
 )
 
 ORGANIZATION = {
@@ -94,16 +95,18 @@ ORGANIZATION = {
         },
     ],
     "knowsAbout": [
+        "Custom website development",
+        "Android application development",
+        "iOS application development",
+        "Mac application development",
+        "Desktop software development",
         "SatpudaCore Medical Management",
-        "Medical store management software",
-        "Pharmacy billing software",
+        "Medical store management SaaS",
         "SatpudaCore Hospital Management",
         "Hospital management SaaS",
-        "Medical billing software",
+        "Hotel management SaaS",
         "Business management SaaS",
-        "Website development",
-        "Android application development",
-        "Desktop software development",
+        "Custom software development",
     ],
 }
 
@@ -190,11 +193,11 @@ APPS = [
         "name": "SatpudaCore Hospital Management for Small Hospitals",
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "Hospital Management SaaS",
-        "operatingSystem": "Windows",
+        "operatingSystem": "Windows, Android",
         "url": f"{SITE}/products.html",
         "publisher": dict(ORG_REF),
         "author": dict(ORG_REF),
-        "description": "SatpudaCore Hospital Management is hospital management SaaS for small hospitals from Satpuda Core Private Limited. First-time payment Rs 15000.",
+        "description": "SatpudaCore Hospital Management is hospital management SaaS for small hospitals from Satpuda Core Private Limited, with Android apps for receptionists and doctors to run on tablets and Android phones. First-time payment Rs 15000.",
         "offers": {
             "@type": "Offer",
             "price": "15000",
@@ -215,7 +218,7 @@ SERVICES = [
         "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/products.html",
-        "description": "Medical store and pharmacy billing and management software SaaS from Satpuda Core Private Limited.",
+        "description": "SatpudaCore Medical Management SaaS for medical stores and pharmacies. PC Rs 8000 first-time, PC+Android Rs 10000 first-time, AMC Rs 1000 per year.",
     },
     {
         "@type": "Service",
@@ -225,7 +228,17 @@ SERVICES = [
         "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/products.html",
-        "description": "Hospital management SaaS for small hospitals from Satpuda Core Private Limited.",
+        "description": "Hospital management SaaS for small hospitals with Android apps for receptionists and doctors on tablets and Android devices. Rs 15000 first-time.",
+    },
+    {
+        "@type": "Service",
+        "@id": f"{SITE}/products.html#hotel-management",
+        "name": "SatpudaCore Hotel Management SaaS",
+        "serviceType": "Hotel Management SaaS",
+        "provider": dict(ORG_REF),
+        "areaServed": "IN",
+        "url": f"{SITE}/products.html",
+        "description": "Hotel management SaaS from Satpuda Core Private Limited. Coming soon.",
     },
     {
         "@type": "Service",
@@ -235,7 +248,7 @@ SERVICES = [
         "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
-        "description": "Custom website development by Satpuda Core Private Limited for businesses.",
+        "description": "Custom website development by Satpuda Core Private Limited. Rs 6000 to Rs 100000.",
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "INR",
@@ -254,7 +267,7 @@ SERVICES = [
         "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
-        "description": "Custom Android application development by Satpuda Core Private Limited.",
+        "description": "Custom Android application development by Satpuda Core Private Limited. Rs 40000 to Rs 500000.",
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "INR",
@@ -273,7 +286,7 @@ SERVICES = [
         "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
-        "description": "Custom desktop software development by Satpuda Core Private Limited.",
+        "description": "Custom Windows desktop software development by Satpuda Core Private Limited. Rs 40000 to Rs 500000.",
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "INR",
@@ -292,7 +305,7 @@ SERVICES = [
         "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
-        "description": "Custom iOS and Mac software development by Satpuda Core Private Limited.",
+        "description": "Custom iOS and Mac application development by Satpuda Core Private Limited. Rs 40000 to Rs 500000.",
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "INR",
@@ -333,7 +346,7 @@ FAQ = {
             "name": "What does Satpuda Core Private Limited do?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Satpuda Core Private Limited develops and sells SatpudaCore Medical Management software for medical stores and pharmacies (offline PC and PC+Android), SatpudaCore Hospital Management SaaS for small hospitals, billing and business management software, custom websites, Android apps, desktop software, iOS and Mac applications, and SaaS products for businesses in India.",
+                "text": "Satpuda Core Private Limited builds custom websites, Android applications, iOS and Mac applications, Windows desktop software, and other technology products for businesses. We also provide and update SaaS products: SatpudaCore Medical Management for medical stores and pharmacies (offline PC Rs 8000 or PC+Android Rs 10000 first-time, AMC Rs 1000 per year), SatpudaCore Hospital Management SaaS for small hospitals (Rs 15000 first-time) with Android apps for receptionists and doctors on tablets and Android phones, and hotel management SaaS plus other SaaS products coming soon. Custom websites: Rs 6000 to Rs 100000. Custom Android, desktop, iOS and Mac apps: Rs 40000 to Rs 500000.",
             },
         },
         {
@@ -341,7 +354,7 @@ FAQ = {
             "name": "What is SatpudaCore Medical Management?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "SatpudaCore Medical Management is medical store and pharmacy billing and management software from Satpuda Core Private Limited. It is available as offline PC software (Rs 8000 first-time) or PC + Android (Rs 10000 first-time) with AMC Rs 1000 per year.",
+                "text": "SatpudaCore Medical Management is medical store and pharmacy billing and management SaaS from Satpuda Core Private Limited. Offline PC: Rs 8000 first-time. PC + Android: Rs 10000 first-time. AMC: Rs 1000 per year.",
             },
         },
         {
@@ -349,7 +362,23 @@ FAQ = {
             "name": "What is SatpudaCore Hospital Management?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "SatpudaCore Hospital Management is hospital management SaaS for small hospitals from Satpuda Core Private Limited. First-time payment is Rs 15000.",
+                "text": "SatpudaCore Hospital Management is hospital management SaaS for small hospitals from Satpuda Core Private Limited. It includes Android apps for receptionists and doctors to use on tablets and Android phones. First-time payment is Rs 15000.",
+            },
+        },
+        {
+            "@type": "Question",
+            "name": "What SaaS products are coming soon from Satpuda Core?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Satpuda Core Private Limited is developing SatpudaCore Hotel Management SaaS and additional SaaS products for businesses. Contact satpudacoreprivatelimited@gmail.com for updates.",
+            },
+        },
+        {
+            "@type": "Question",
+            "name": "What are all Satpuda Core service and SaaS prices?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SatpudaCore Medical Management PC: Rs 8000 first-time. PC + Android: Rs 10000 first-time. AMC: Rs 1000 per year. SatpudaCore Hospital Management SaaS: Rs 15000 first-time. Custom websites: Rs 6000 to Rs 100000. Custom Android, desktop, iOS and Mac applications: Rs 40000 to Rs 500000.",
             },
         },
         {
@@ -365,7 +394,7 @@ FAQ = {
             "name": "How much is hospital management software?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Hospital management software for small hospitals is Rs 15000 first-time.",
+                "text": "SatpudaCore Hospital Management SaaS for small hospitals is Rs 15000 first-time, including Android apps for receptionists and doctors.",
             },
         },
         {
@@ -373,7 +402,7 @@ FAQ = {
             "name": "What are website and app development prices?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Website development ranges from Rs 6000 to Rs 100000. Android, desktop, iOS and Mac application development typically ranges from Rs 40000 to Rs 500000.",
+                "text": "Custom website development ranges from Rs 6000 to Rs 100000. Custom Android, desktop, iOS and Mac application development typically ranges from Rs 40000 to Rs 500000.",
             },
         },
         {
@@ -393,7 +422,7 @@ PAGES = {
             "@type": "WebPage",
             "@id": f"{SITE}/#webpage",
             "url": f"{SITE}/",
-            "name": "Satpuda Core Private Limited | Medical & Hospital Management SaaS",
+            "name": "Satpuda Core Private Limited | Custom Software & SaaS",
             "description": COMPANY_DESCRIPTION,
             "isPartOf": dict(WEBSITE_REF),
             "about": dict(ORG_REF),
@@ -435,7 +464,7 @@ PAGES = {
             "@id": f"{SITE}/products.html#webpage",
             "url": f"{SITE}/products.html",
             "name": "Products - Satpuda Core Private Limited",
-            "description": "Medical and hospital management software products from Satpuda Core Private Limited.",
+            "description": "Medical and hospital management SaaS plus custom software products from Satpuda Core Private Limited.",
             "isPartOf": dict(WEBSITE_REF),
             "about": dict(ORG_REF),
             "publisher": dict(ORG_REF),
@@ -539,7 +568,7 @@ def write_asset_files() -> None:
 def main() -> None:
     for filename, cfg in PAGES.items():
         rebuild_page(filename, cfg)
-        print(f"Updated {filename} with 15 standalone Schema.org scripts")
+        print(f"Updated {filename} with 16 standalone Schema.org scripts")
     write_asset_files()
     print("Updated assets/schema-primary.jsonld.html and schema-catalog.jsonld.html")
 

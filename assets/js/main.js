@@ -4,7 +4,10 @@
     var THEME_KEY = 'satpuda-theme';
 
     if (page) {
-        document.querySelectorAll('[data-page="' + page + '"]').forEach(function (el) {
+        document.querySelectorAll('.nav-link[data-page]').forEach(function (el) {
+            el.classList.remove('active');
+        });
+        document.querySelectorAll('.nav-link[data-page="' + page + '"]').forEach(function (el) {
             el.classList.add('active');
         });
     }
@@ -41,7 +44,7 @@
 
         var favicon = document.getElementById('favicon');
         if (favicon) {
-            favicon.href = theme === 'light' ? 'assets/logo_icon.png?v=9' : 'assets/logo_icon_dark.png?v=9';
+            favicon.href = theme === 'light' ? 'assets/logo_icon.png?v=11' : 'assets/logo_icon_dark.png?v=11';
         }
 
         var toggles = document.querySelectorAll('[data-theme-toggle]');

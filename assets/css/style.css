@@ -904,6 +904,22 @@ section {
     }
 }
 
+.price-line {
+    margin-top: 16px;
+    margin-bottom: 0;
+    color: var(--text);
+    font-size: 1.05rem;
+}
+
+.price-line a {
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+.pricing-actions {
+    margin-top: 8px;
+}
+
 /* CONTACT */
 .contact-card {
     background: var(--surface);

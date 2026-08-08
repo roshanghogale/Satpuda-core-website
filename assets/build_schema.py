@@ -4,7 +4,8 @@ Build Schema.org JSON-LD for Satpuda Core site.
 Follows schema.org guidance:
 - JSON-LD format (https://schema.org/docs/gs.html)
 - One top-level entity per <script> for validator visibility
-- Stable @id URLs linking Organization -> WebSite -> WebPage
+- Full Organization + WebSite each get their own @id in dedicated scripts
+- Other entities use embedded name/url refs (no @id) so the validator lists Org/WebSite separately
 - ISO 8601 dates, schema.org enumeration URLs for availability
 - FAQPage always last script block
 """
@@ -19,6 +20,18 @@ SITE = "https://satpudacore.in"
 ORG_ID = f"{SITE}/#organization"
 WEBSITE_ID = f"{SITE}/#website"
 FAQ_ID = f"{SITE}/#faq"
+
+# Embedded refs for secondary blocks — avoids validator merging Org/WebSite away.
+ORG_REF = {
+    "@type": "Organization",
+    "name": "Satpuda Core Private Limited",
+    "url": SITE,
+}
+WEBSITE_REF = {
+    "@type": "WebSite",
+    "name": "Satpuda Core Private Limited",
+    "url": SITE,
+}
 
 ORGANIZATION = {
     "@type": "Organization",
@@ -75,8 +88,8 @@ WEBSITE = {
     "alternateName": "Satpuda Core",
     "description": "Billing | Management | Simplified - Official website of Satpuda Core Private Limited.",
     "inLanguage": ["en-IN", "hi-IN", "mr-IN"],
-    "publisher": {"@id": ORG_ID},
-    "copyrightHolder": {"@id": ORG_ID},
+    "publisher": dict(ORG_REF),
+    "copyrightHolder": dict(ORG_REF),
 }
 
 APPS = [
@@ -87,8 +100,8 @@ APPS = [
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Windows",
         "url": f"{SITE}/products.html",
-        "publisher": {"@id": ORG_ID},
-        "author": {"@id": ORG_ID},
+        "publisher": dict(ORG_REF),
+        "author": dict(ORG_REF),
         "description": "Offline medical store billing and management software from Satpuda Core Private Limited. First-time licence Rs 8000. AMC Rs 1000 per year.",
         "offers": [
             {
@@ -98,7 +111,7 @@ APPS = [
                 "priceCurrency": "INR",
                 "availability": "https://schema.org/InStock",
                 "url": f"{SITE}/products.html",
-                "seller": {"@id": ORG_ID},
+                "seller": dict(ORG_REF),
             },
             {
                 "@type": "Offer",
@@ -107,7 +120,7 @@ APPS = [
                 "priceCurrency": "INR",
                 "availability": "https://schema.org/InStock",
                 "url": f"{SITE}/products.html",
-                "seller": {"@id": ORG_ID},
+                "seller": dict(ORG_REF),
             },
         ],
     },
@@ -118,8 +131,8 @@ APPS = [
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Windows, Android",
         "url": f"{SITE}/products.html",
-        "publisher": {"@id": ORG_ID},
-        "author": {"@id": ORG_ID},
+        "publisher": dict(ORG_REF),
+        "author": dict(ORG_REF),
         "description": "Medical management software with PC and Android from Satpuda Core Private Limited. First-time payment Rs 10000. AMC Rs 1000 per year.",
         "offers": [
             {
@@ -129,7 +142,7 @@ APPS = [
                 "priceCurrency": "INR",
                 "availability": "https://schema.org/InStock",
                 "url": f"{SITE}/products.html",
-                "seller": {"@id": ORG_ID},
+                "seller": dict(ORG_REF),
             },
             {
                 "@type": "Offer",
@@ -138,7 +151,7 @@ APPS = [
                 "priceCurrency": "INR",
                 "availability": "https://schema.org/InStock",
                 "url": f"{SITE}/products.html",
-                "seller": {"@id": ORG_ID},
+                "seller": dict(ORG_REF),
             },
         ],
     },
@@ -149,8 +162,8 @@ APPS = [
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Windows",
         "url": f"{SITE}/products.html",
-        "publisher": {"@id": ORG_ID},
-        "author": {"@id": ORG_ID},
+        "publisher": dict(ORG_REF),
+        "author": dict(ORG_REF),
         "description": "Hospital management software for small hospitals from Satpuda Core Private Limited. First-time payment Rs 15000.",
         "offers": {
             "@type": "Offer",
@@ -158,7 +171,7 @@ APPS = [
             "priceCurrency": "INR",
             "availability": "https://schema.org/InStock",
             "url": f"{SITE}/products.html",
-            "seller": {"@id": ORG_ID},
+            "seller": dict(ORG_REF),
         },
     },
 ]
@@ -169,7 +182,7 @@ SERVICES = [
         "@id": f"{SITE}/services.html#websites",
         "name": "Website Development",
         "serviceType": "Website Development",
-        "provider": {"@id": ORG_ID},
+        "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
         "description": "Custom website development by Satpuda Core Private Limited for businesses.",
@@ -180,7 +193,7 @@ SERVICES = [
             "highPrice": "100000",
             "offerCount": "1",
             "url": f"{SITE}/services.html",
-            "seller": {"@id": ORG_ID},
+            "seller": dict(ORG_REF),
         },
     },
     {
@@ -188,7 +201,7 @@ SERVICES = [
         "@id": f"{SITE}/services.html#android",
         "name": "Android Application Development",
         "serviceType": "Android Application Development",
-        "provider": {"@id": ORG_ID},
+        "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
         "description": "Custom Android application development by Satpuda Core Private Limited.",
@@ -199,7 +212,7 @@ SERVICES = [
             "highPrice": "500000",
             "offerCount": "1",
             "url": f"{SITE}/services.html",
-            "seller": {"@id": ORG_ID},
+            "seller": dict(ORG_REF),
         },
     },
     {
@@ -207,7 +220,7 @@ SERVICES = [
         "@id": f"{SITE}/services.html#desktop",
         "name": "Desktop Application Development",
         "serviceType": "Desktop Application Development",
-        "provider": {"@id": ORG_ID},
+        "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
         "description": "Custom desktop software development by Satpuda Core Private Limited.",
@@ -218,7 +231,7 @@ SERVICES = [
             "highPrice": "500000",
             "offerCount": "1",
             "url": f"{SITE}/services.html",
-            "seller": {"@id": ORG_ID},
+            "seller": dict(ORG_REF),
         },
     },
     {
@@ -226,7 +239,7 @@ SERVICES = [
         "@id": f"{SITE}/services.html#ios-mac",
         "name": "iOS and Mac Application Development",
         "serviceType": "iOS and Mac Application Development",
-        "provider": {"@id": ORG_ID},
+        "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
         "description": "Custom iOS and Mac software development by Satpuda Core Private Limited.",
@@ -237,7 +250,7 @@ SERVICES = [
             "highPrice": "500000",
             "offerCount": "1",
             "url": f"{SITE}/services.html",
-            "seller": {"@id": ORG_ID},
+            "seller": dict(ORG_REF),
         },
     },
     {
@@ -245,7 +258,7 @@ SERVICES = [
         "@id": f"{SITE}/services.html#billing-management",
         "name": "Billing and Management Software Solutions",
         "serviceType": "Billing and Management Software Solutions",
-        "provider": {"@id": ORG_ID},
+        "provider": dict(ORG_REF),
         "areaServed": "IN",
         "url": f"{SITE}/services.html",
         "description": "Custom billing and business management software solutions for small and medium businesses.",
@@ -256,8 +269,6 @@ FAQ = {
     "@type": "FAQPage",
     "@id": FAQ_ID,
     "url": SITE,
-    "isPartOf": {"@id": WEBSITE_ID},
-    "about": {"@id": ORG_ID},
     "mainEntity": [
         {
             "@type": "Question",
@@ -318,9 +329,9 @@ PAGES = {
             "url": f"{SITE}/",
             "name": "Satpuda Core Private Limited | Software Development Company",
             "description": "Satpuda Core Private Limited provides billing and management software, websites, Android apps, and custom software solutions.",
-            "isPartOf": {"@id": WEBSITE_ID},
-            "about": {"@id": ORG_ID},
-            "publisher": {"@id": ORG_ID},
+            "isPartOf": dict(WEBSITE_REF),
+            "about": dict(ORG_REF),
+            "publisher": dict(ORG_REF),
             "inLanguage": "en-IN",
         },
         "breadcrumb": [("Home", f"{SITE}/")],
@@ -331,10 +342,10 @@ PAGES = {
             "@id": f"{SITE}/about.html#webpage",
             "url": f"{SITE}/about.html",
             "name": "About Us - Satpuda Core Private Limited",
-            "isPartOf": {"@id": WEBSITE_ID},
-            "about": {"@id": ORG_ID},
-            "mainEntity": {"@id": ORG_ID},
-            "publisher": {"@id": ORG_ID},
+            "isPartOf": dict(WEBSITE_REF),
+            "about": dict(ORG_REF),
+            "mainEntity": dict(ORG_REF),
+            "publisher": dict(ORG_REF),
             "inLanguage": "en-IN",
         },
         "breadcrumb": [("Home", f"{SITE}/"), ("About", f"{SITE}/about.html")],
@@ -345,9 +356,9 @@ PAGES = {
             "@id": f"{SITE}/contact.html#webpage",
             "url": f"{SITE}/contact.html",
             "name": "Contact Satpuda Core Private Limited",
-            "isPartOf": {"@id": WEBSITE_ID},
-            "about": {"@id": ORG_ID},
-            "publisher": {"@id": ORG_ID},
+            "isPartOf": dict(WEBSITE_REF),
+            "about": dict(ORG_REF),
+            "publisher": dict(ORG_REF),
             "inLanguage": "en-IN",
         },
         "breadcrumb": [("Home", f"{SITE}/"), ("Contact", f"{SITE}/contact.html")],
@@ -359,9 +370,9 @@ PAGES = {
             "url": f"{SITE}/products.html",
             "name": "Products - Satpuda Core Private Limited",
             "description": "Medical and hospital management software products from Satpuda Core Private Limited.",
-            "isPartOf": {"@id": WEBSITE_ID},
-            "about": {"@id": ORG_ID},
-            "publisher": {"@id": ORG_ID},
+            "isPartOf": dict(WEBSITE_REF),
+            "about": dict(ORG_REF),
+            "publisher": dict(ORG_REF),
             "inLanguage": "en-IN",
         },
         "breadcrumb": [("Home", f"{SITE}/"), ("Products", f"{SITE}/products.html")],
@@ -373,9 +384,9 @@ PAGES = {
             "url": f"{SITE}/services.html",
             "name": "Services and Pricing - Satpuda Core Private Limited",
             "description": "Software products and custom development services from Satpuda Core Private Limited with published pricing.",
-            "isPartOf": {"@id": WEBSITE_ID},
-            "about": {"@id": ORG_ID},
-            "publisher": {"@id": ORG_ID},
+            "isPartOf": dict(WEBSITE_REF),
+            "about": dict(ORG_REF),
+            "publisher": dict(ORG_REF),
             "inLanguage": "en-IN",
         },
         "breadcrumb": [("Home", f"{SITE}/"), ("Services", f"{SITE}/services.html")],
@@ -387,9 +398,9 @@ PAGES = {
             "url": f"{SITE}/download.html",
             "name": "Downloads - Satpuda Core Private Limited",
             "description": "Download SatpudaCore installers from Satpuda Core Private Limited.",
-            "isPartOf": {"@id": WEBSITE_ID},
-            "about": {"@id": ORG_ID},
-            "publisher": {"@id": ORG_ID},
+            "isPartOf": dict(WEBSITE_REF),
+            "about": dict(ORG_REF),
+            "publisher": dict(ORG_REF),
             "inLanguage": "en-IN",
         },
         "breadcrumb": [("Home", f"{SITE}/"), ("Downloads", f"{SITE}/download.html")],

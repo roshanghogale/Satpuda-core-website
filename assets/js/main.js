@@ -44,7 +44,7 @@
 
         var favicon = document.getElementById('favicon');
         if (favicon) {
-            favicon.href = theme === 'light' ? 'assets/logo_icon.png?v=11' : 'assets/logo_icon_dark.png?v=11';
+            favicon.href = theme === 'light' ? 'assets/favicon-48.png?v=12' : 'assets/favicon-48-dark.png?v=12';
         }
 
         var toggles = document.querySelectorAll('[data-theme-toggle]');

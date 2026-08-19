@@ -11,7 +11,7 @@
       "logo": {
         "@type": "ImageObject",
         "@id": "https://satpudacore.in/#logo",
-        "url": "https://satpudacore.in/assets/logo_icon.png",
+        "url": "https://satpudacore.in/assets/satpuda_logo.png",
         "caption": "Satpuda Core Private Limited logo"
       },
       "image": "https://satpudacore.in/assets/logo_dark.png",
@@ -20,6 +20,12 @@
       "foundingDate": "2026-07-28",
       "email": "satpudacoreprivatelimited@gmail.com",
       "telephone": ["+91-93254-85954", "+91-70588-74807"],
+      "sameAs": [
+        "https://www.linkedin.com/company/satpuda-core-private-limited",
+        "https://www.facebook.com/share/p/1EpFPd357n/",
+        "https://www.instagram.com/satpudacoreprivatelimited/",
+        "https://www.youtube.com/@satpudacoreprivatelimited"
+      ],
       "identifier": {
         "@type": "PropertyValue",
         "@id": "https://satpudacore.in/#cin",

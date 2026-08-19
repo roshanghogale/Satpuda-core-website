@@ -1,7 +1,6 @@
-/services /services.html 200
-/products /products.html 200
-/download /download.html 200
-/downloads /download.html 200
-/about /about.html 200
-/contact /contact.html 200
-/home /index.html 200
+# Do not map /page -> /page.html here.
+# Cloudflare Pages already serves page.html at /page and redirects .html -> clean URLs.
+# Those mappings create a redirect loop with CF's HTML extension handling.
+
+/downloads /download 301
+/home / 301

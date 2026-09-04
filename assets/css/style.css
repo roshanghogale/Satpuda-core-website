@@ -1629,6 +1629,25 @@ section {
     border-color: rgba(22, 163, 74, 0.3);
 }
 
+.work-badge.is-progress {
+    background: rgba(234, 179, 8, 0.12);
+    border-color: rgba(234, 179, 8, 0.38);
+    color: #fde047;
+}
+
+[data-theme="light"] .work-badge.is-progress {
+    color: #a16207;
+    background: rgba(234, 179, 8, 0.12);
+    border-color: rgba(234, 179, 8, 0.4);
+}
+
+.work-note {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin: 0;
+}
+
 .work-card h3 {
     font-size: 1.25rem;
     font-weight: 800;

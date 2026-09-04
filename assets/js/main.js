@@ -42,11 +42,6 @@
             localStorage.setItem(THEME_KEY, theme);
         } catch (e) {}
 
-        var favicon = document.getElementById('favicon');
-        if (favicon) {
-            favicon.href = theme === 'light' ? 'assets/favicon-48.png?v=12' : 'assets/favicon-48-dark.png?v=12';
-        }
-
         var toggles = document.querySelectorAll('[data-theme-toggle]');
         toggles.forEach(function (btn) {
             btn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
@@ -159,7 +154,241 @@
             });
     }
 
+    /* ---------------------------------------------------------------
+       ENQUIRY FORM
+       Delivery runs through FormSubmit.co, which needs no account:
+       the first real submission emails ENQUIRY_EMAIL an activation
+       link. Click it once and every later enquiry is delivered.
+       To move to another provider (Web3Forms, Formspree, a Pages
+       Function), change ENQUIRY_ENDPOINT only - nothing else here
+       depends on the provider.
+    --------------------------------------------------------------- */
+    var ENQUIRY_EMAIL = 'satpudacoreprivatelimited@gmail.com';
+    var ENQUIRY_ENDPOINT = 'https://formsubmit.co/ajax/' + ENQUIRY_EMAIL;
+
+    function fieldOf(input) {
+        return input.closest('.field');
+    }
+
+    function showFieldError(input, message) {
+        var field = fieldOf(input);
+        if (!field) return;
+        field.classList.add('has-error');
+        var msgEl = field.querySelector('.field-error');
+        if (msgEl) msgEl.textContent = message;
+        input.setAttribute('aria-invalid', 'true');
+    }
+
+    function clearFieldError(input) {
+        var field = fieldOf(input);
+        if (!field) return;
+        field.classList.remove('has-error');
+        input.removeAttribute('aria-invalid');
+    }
+
+    function digitsOnly(value) {
+        return (value || '').replace(/\D/g, '');
+    }
+
+    // Accepts 9325485954, 093254 85954, +91 93254-85954 and similar.
+    function normalisePhone(value) {
+        var digits = digitsOnly(value);
+        if (digits.length === 12 && digits.indexOf('91') === 0) digits = digits.slice(2);
+        else if (digits.length === 11 && digits.charAt(0) === '0') digits = digits.slice(1);
+        return digits;
+    }
+
+    function validateField(input) {
+        var value = (input.value || '').trim();
+        var name = input.name;
+
+        if (name === 'name') {
+            if (!value) return 'Please enter your full name.';
+            if (value.length < 2) return 'Please enter your full name.';
+            return '';
+        }
+
+        if (name === 'phone') {
+            if (!value) return 'Please enter your phone number.';
+            var phone = normalisePhone(value);
+            if (phone.length !== 10) return 'Enter a 10-digit mobile number.';
+            if (!/^[6-9]/.test(phone)) return 'Enter a valid 10-digit Indian mobile number.';
+            return '';
+        }
+
+        if (name === 'email') {
+            if (!value) return '';
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) return 'Enter a valid email address, or leave this blank.';
+            return '';
+        }
+
+        if (name === 'city') {
+            if (!value) return 'Please enter your city or district.';
+            return '';
+        }
+
+        if (name === 'service') {
+            if (!value) return 'Please choose the service you need.';
+            return '';
+        }
+
+        if (name === 'requirements') {
+            if (!value) return 'Please describe what you need.';
+            if (value.length < 20) return 'Please add a little more detail (at least 20 characters).';
+            return '';
+        }
+
+        return '';
+    }
+
+    function setStatus(statusEl, type, html) {
+        if (!statusEl) return;
+        statusEl.className = 'form-status is-visible is-' + type;
+        statusEl.innerHTML = html;
+        statusEl.setAttribute('role', type === 'error' ? 'alert' : 'status');
+    }
+
+    function initEnquiryForm() {
+        var form = document.getElementById('enquiry-form');
+        if (!form) return;
+
+        var statusEl = document.getElementById('form-status');
+        var submitBtn = form.querySelector('[type="submit"]');
+        var submitLabel = submitBtn ? submitBtn.innerHTML : '';
+        var inputs = Array.prototype.slice.call(
+            form.querySelectorAll('input[name], select[name], textarea[name]')
+        ).filter(function (el) {
+            return el.name.charAt(0) !== '_';
+        });
+        var attempted = false;
+
+        inputs.forEach(function (input) {
+            var revalidate = function () {
+                if (!attempted) return;
+                var error = validateField(input);
+                if (error) showFieldError(input, error);
+                else clearFieldError(input);
+            };
+            input.addEventListener('input', revalidate);
+            input.addEventListener('change', revalidate);
+            input.addEventListener('blur', function () {
+                var error = validateField(input);
+                if (error) showFieldError(input, error);
+                else clearFieldError(input);
+            });
+        });
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            attempted = true;
+
+            var firstInvalid = null;
+            inputs.forEach(function (input) {
+                var error = validateField(input);
+                if (error) {
+                    showFieldError(input, error);
+                    if (!firstInvalid) firstInvalid = input;
+                } else {
+                    clearFieldError(input);
+                }
+            });
+
+            // Validation failed: keep every value the visitor typed.
+            if (firstInvalid) {
+                setStatus(statusEl, 'error', '<strong>Please check the highlighted fields</strong>Your details are still here \u2013 fix the marked fields and send again.');
+                firstInvalid.focus();
+                if (firstInvalid.scrollIntoView) {
+                    firstInvalid.scrollIntoView({ block: 'center', behavior: 'smooth' });
+                }
+                return;
+            }
+
+            var payload = {};
+            inputs.forEach(function (input) {
+                var value = (input.value || '').trim();
+                // Skip blank optionals so the enquiry email has no empty rows.
+                if (value) payload[input.name] = value;
+            });
+
+            var honey = form.querySelector('input[name="_honey"]');
+            if (honey && honey.value) return; // bot
+
+            payload._subject = 'Website enquiry: ' + (payload.service || 'General') + ' - ' + payload.name;
+            payload._template = 'table';
+            payload._captcha = 'false';
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="bi bi-arrow-repeat"></i> Sending\u2026';
+            }
+            setStatus(statusEl, 'success', 'Sending your enquiry...');
+
+            fetch(ENQUIRY_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(function (res) {
+                    if (!res.ok) throw new Error('submit failed');
+                    return res.json().catch(function () { return {}; });
+                })
+                .then(function () {
+                    setStatus(
+                        statusEl,
+                        'success',
+                        '<strong>Thank you \u2013 your enquiry has been sent.</strong>' +
+                        'We have received your requirements and will get back to you on the number you gave us, usually within one working day. ' +
+                        'For anything urgent, message us on <a href="https://wa.me/919325485954" target="_blank" rel="noopener">WhatsApp</a> or call +91-93254 85954.'
+                    );
+                    form.reset();
+                    attempted = false;
+                    inputs.forEach(clearFieldError);
+                    if (statusEl && statusEl.scrollIntoView) {
+                        statusEl.scrollIntoView({ block: 'center', behavior: 'smooth' });
+                    }
+                })
+                .catch(function () {
+                    var body = [
+                        'Name: ' + payload.name,
+                        'Phone: ' + payload.phone,
+                        'Email: ' + (payload.email || '-'),
+                        'City / District: ' + payload.city,
+                        'Service needed: ' + payload.service,
+                        'Budget: ' + (payload.budget || 'Not specified'),
+                        'Timeline: ' + (payload.timeline || 'Not specified'),
+                        '',
+                        'Requirements:',
+                        payload.requirements
+                    ].join('\n');
+
+                    var mailto = 'mailto:' + ENQUIRY_EMAIL +
+                        '?subject=' + encodeURIComponent(payload._subject) +
+                        '&body=' + encodeURIComponent(body);
+
+                    setStatus(
+                        statusEl,
+                        'error',
+                        '<strong>We could not send that automatically.</strong>' +
+                        'Nothing you typed has been lost. Please ' +
+                        '<a href="' + mailto + '">send it by email instead</a> ' +
+                        '(opens with your details filled in), or message us on ' +
+                        '<a href="https://wa.me/919325485954" target="_blank" rel="noopener">WhatsApp</a>.'
+                    );
+                })
+                .then(function () {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = submitLabel;
+                    }
+                });
+        });
+    }
+
     initThemeToggle();
     initPagePrefetch();
     initDownloads();
+    initEnquiryForm();
 })();

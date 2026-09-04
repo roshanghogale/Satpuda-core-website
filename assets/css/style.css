@@ -1053,3 +1053,539 @@ section {
     .cta { padding: 44px 24px; }
     .product-spotlight { padding: 30px 24px; }
 }
+
+/* ===== SECONDARY / COMPACT SECTION ===== */
+.section-sub {
+    padding-top: 0;
+}
+
+.section-title.is-compact {
+    margin-bottom: 32px;
+}
+
+.section-title.is-compact h2 {
+    font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+}
+
+.section-title.is-compact p {
+    font-size: 0.92rem;
+}
+
+/* Compact ready-made product cards */
+.mini-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.mini-card:hover {
+    border-color: rgba(34, 211, 238, 0.45);
+    transform: translateY(-3px);
+}
+
+.mini-card .mini-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(124, 58, 237, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--cyan);
+    margin-bottom: 4px;
+}
+
+.mini-card h5 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text);
+}
+
+.mini-card p {
+    color: var(--muted);
+    font-size: 0.86rem;
+    margin: 0;
+}
+
+.mini-card .mini-price {
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.mini-card .mini-amc {
+    display: inline-block;
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 0.82rem;
+}
+
+.mini-card .mini-soon {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    background: rgba(148, 163, 184, 0.12);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+/* ===== WHY CHOOSE US ===== */
+.why-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.why-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    transition: 0.2s;
+}
+
+.why-list li:hover {
+    border-color: rgba(124, 58, 237, 0.4);
+}
+
+.why-list i {
+    color: var(--green);
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.why-list strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.why-list span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .why-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .why-list li:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ===== SERVICE DETAIL BLOCKS (services page) ===== */
+.service-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.25s;
+}
+
+.service-block:hover {
+    border-color: rgba(124, 58, 237, 0.45);
+    box-shadow: var(--glow);
+}
+
+.service-block h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: var(--text);
+}
+
+.service-block > p {
+    color: var(--muted);
+    font-size: 0.93rem;
+    margin-bottom: 18px;
+}
+
+.service-block .included-label {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 10px;
+}
+
+.service-block .pricing-list {
+    margin-bottom: 20px;
+}
+
+.service-meta {
+    display: grid;
+    gap: 10px;
+    padding: 16px 0;
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+}
+
+.service-meta div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.service-meta dt {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.service-meta dd {
+    margin: 0;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: right;
+}
+
+.service-meta .service-price {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.02rem;
+}
+
+.service-block .btn-outline,
+.service-block .btn-main {
+    align-self: flex-start;
+}
+
+/* ===== ENQUIRY FORM ===== */
+.form-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 34px;
+}
+
+.form-panel h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.form-panel .form-intro {
+    color: var(--muted);
+    font-size: 0.93rem;
+    margin-bottom: 26px;
+}
+
+.enquiry-form .form-label {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 7px;
+}
+
+.enquiry-form .form-label .req {
+    color: #f87171;
+    margin-left: 2px;
+}
+
+[data-theme="light"] .enquiry-form .form-label .req {
+    color: #dc2626;
+}
+
+.enquiry-form .form-label .opt {
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 0.78rem;
+    margin-left: 4px;
+}
+
+.enquiry-form .form-control,
+.enquiry-form .form-select {
+    width: 100%;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-size: 0.93rem;
+    font-family: inherit;
+    line-height: 1.5;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.enquiry-form textarea.form-control {
+    min-height: 132px;
+    resize: vertical;
+}
+
+.enquiry-form .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2394a3b8'%3E%3Cpath d='M8 11.5 3.5 7h9z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.enquiry-form .form-control::placeholder {
+    color: var(--muted);
+    opacity: 0.75;
+}
+
+.enquiry-form .form-control:focus,
+.enquiry-form .form-select:focus {
+    outline: none;
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
+    background: var(--surface-2);
+    color: var(--text);
+}
+
+.enquiry-form .form-select option {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.enquiry-form .field {
+    margin-bottom: 18px;
+}
+
+.enquiry-form .field-error {
+    display: none;
+    color: #f87171;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+[data-theme="light"] .enquiry-form .field-error {
+    color: #dc2626;
+}
+
+.enquiry-form .field.has-error .field-error {
+    display: block;
+}
+
+.enquiry-form .field.has-error .form-control,
+.enquiry-form .field.has-error .form-select {
+    border-color: #f87171;
+}
+
+.enquiry-form .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.enquiry-form .btn-main[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.form-status {
+    display: none;
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    font-size: 0.92rem;
+    margin-bottom: 22px;
+    border: 1px solid transparent;
+}
+
+.form-status.is-visible {
+    display: block;
+}
+
+.form-status.is-success {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: rgba(34, 197, 94, 0.4);
+    color: #86efac;
+}
+
+[data-theme="light"] .form-status.is-success {
+    background: rgba(22, 163, 74, 0.08);
+    border-color: rgba(22, 163, 74, 0.35);
+    color: #15803d;
+}
+
+.form-status.is-error {
+    background: rgba(248, 113, 113, 0.1);
+    border-color: rgba(248, 113, 113, 0.4);
+    color: #fca5a5;
+}
+
+[data-theme="light"] .form-status.is-error {
+    background: rgba(220, 38, 38, 0.07);
+    border-color: rgba(220, 38, 38, 0.3);
+    color: #b91c1c;
+}
+
+.form-status strong {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.form-status a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.form-note {
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin: 18px 0 0;
+}
+
+/* ===== WHATSAPP ===== */
+.btn-whatsapp {
+    background: #25d366;
+    color: #052e16;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.28);
+}
+
+.btn-whatsapp:hover {
+    color: #052e16;
+    background: #1fbe5b;
+    transform: translateY(-2px);
+}
+
+.whatsapp-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    text-align: center;
+}
+
+.whatsapp-panel .wa-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(37, 211, 102, 0.14);
+    color: #25d366;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.whatsapp-panel h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.whatsapp-panel p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.wa-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1040;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wa-float:hover,
+.wa-float:focus {
+    color: #ffffff;
+    transform: scale(1.08);
+    box-shadow: 0 14px 36px rgba(37, 211, 102, 0.5);
+}
+
+.wa-float:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .form-panel { padding: 24px 20px; }
+    .service-block { padding: 26px 22px; }
+    .whatsapp-panel { padding: 24px 20px; }
+    .form-actions .btn-main,
+    .form-actions .btn-whatsapp { width: 100%; justify-content: center; }
+    .wa-float {
+        right: 16px;
+        bottom: 16px;
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+    }
+    .service-meta div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+    .service-meta dd { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wa-float,
+    .mini-card,
+    .service-block,
+    .btn-whatsapp { transition: none; }
+}

@@ -1589,3 +1589,105 @@ section {
     .service-block,
     .btn-whatsapp { transition: none; }
 }
+
+/* ===== WORK / CASE STUDIES ===== */
+.work-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.25s;
+}
+
+.work-card:hover {
+    border-color: rgba(124, 58, 237, 0.45);
+    transform: translateY(-4px);
+    box-shadow: var(--glow);
+}
+
+.work-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    color: #86efac;
+    border-radius: 999px;
+    padding: 5px 13px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+[data-theme="light"] .work-badge {
+    color: #15803d;
+    background: rgba(22, 163, 74, 0.08);
+    border-color: rgba(22, 163, 74, 0.3);
+}
+
+.work-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.work-card .work-role {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.work-card > p {
+    color: var(--muted);
+    font-size: 0.93rem;
+    margin-bottom: 16px;
+}
+
+.work-card .work-metric {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tech-tags span {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.work-actions {
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .work-card { padding: 24px 20px; }
+    .work-actions .btn-outline { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .work-card { transition: none; }
+}

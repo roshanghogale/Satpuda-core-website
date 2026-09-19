@@ -1774,3 +1774,7 @@ section {
 .footer-legal a:hover {
     color: #22d3ee;
 }
+
+.pricing-list a {
+    color: var(--cyan);
+}

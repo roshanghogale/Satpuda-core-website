@@ -150,7 +150,7 @@
             })
             .catch(function () {
                 setText('release-version', FALLBACK_VERSION);
-                setText('installer-size', '~90 MB');
+                setText('installer-size', 'Small download');
             });
     }
 

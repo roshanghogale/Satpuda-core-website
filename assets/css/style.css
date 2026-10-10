@@ -2018,3 +2018,14 @@ section {
         padding: 24px 20px;
     }
 }
+
+.support-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.service-block .pricing-list li:last-child {
+    margin-bottom: 0;
+}

@@ -2029,3 +2029,42 @@ section {
 .service-block .pricing-list li:last-child {
     margin-bottom: 0;
 }
+
+/* Product screenshots */
+.shot {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 10px;
+    height: 100%;
+    transition: 0.2s;
+}
+
+.shot:hover {
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: var(--glow);
+}
+
+.shot img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    display: block;
+    background: #fff;
+}
+
+.shot figcaption {
+    padding: 14px 8px 6px;
+}
+
+.shot figcaption strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.shot figcaption span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
